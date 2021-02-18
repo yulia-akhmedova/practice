@@ -3,6 +3,7 @@ using System;
 
 namespace ConsoleApp.Helpers
 {
+    //input handler? input helper?
     public static class ConsoleHandler
     {
         public static void PrintIntro(int points)
@@ -11,6 +12,10 @@ namespace ConsoleApp.Helpers
             Console.ReadKey();
         }
 
+        //well, input must be validated
+        //the only way to validate in the console app is to use endless loop
+        //i.e. ask to input value untill input is valid
+        //ask to input characteristics name until user inputs one which is in defined Enum
         public static string GetUserInput(string message)
         {
             Console.Write(message);
@@ -36,11 +41,13 @@ namespace ConsoleApp.Helpers
         static string DrawBar(int value, char filledSymbol = '#', char blankSymbol = ' ')
         {
             var bar = string.Empty;
+            //const int maxValue
             var maxValue = 10;
 
             return bar.PadLeft(value, filledSymbol).PadRight(maxValue, blankSymbol);
         }
 
+        //parse GetIntInput would sound better
         public static int ParseUserInput(string message)
         {
             var isInputParsed = false;

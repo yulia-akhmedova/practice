@@ -12,6 +12,7 @@
 
         public static string GetPointsRequest(string operand)
         {
+            //what if * will be passed as operand?
             var operandValue = operand == "+" ? "прибавить" : "отнять";
             return string.Format(POINTS_REQUEST, operandValue);
         }
