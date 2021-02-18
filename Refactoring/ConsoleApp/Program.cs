@@ -14,7 +14,7 @@ namespace ConsoleApp
             var operation = 0;
 
             ConsoleHandler.PrintIntro(player.Points);
-
+            //just to test
             while (player.Points > 0)
             {
                 ConsoleHandler.PrintPlayerData(player);
@@ -25,7 +25,7 @@ namespace ConsoleApp
 
                 player.CalculateCharacteristicValue(characteristic, operation, operand);
             }
-
+            
             player.SetAge(ConsoleHandler.ParseUserInput(Messages.AGE_REQUEST));
             player.ResetPoints();
 
