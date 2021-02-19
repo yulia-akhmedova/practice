@@ -19,3 +19,10 @@ C:\Users\Nitro\Desktop\ConsoleApp\ConsoleApp\ConsoleApp\obj\Debug\ConsoleApp.csp
 C:\Users\Nitro\Desktop\ConsoleApp\ConsoleApp\ConsoleApp\obj\Debug\ConsoleApp.csproj.CoreCompileInputs.cache
 C:\Users\Nitro\Desktop\ConsoleApp\ConsoleApp\ConsoleApp\obj\Debug\ConsoleApp.exe
 C:\Users\Nitro\Desktop\ConsoleApp\ConsoleApp\ConsoleApp\obj\Debug\ConsoleApp.pdb
+D:\My Projects\yuliya-refactoring\practice\Refactoring\ConsoleApp\bin\Debug\ConsoleApp.exe.config
+D:\My Projects\yuliya-refactoring\practice\Refactoring\ConsoleApp\bin\Debug\ConsoleApp.exe
+D:\My Projects\yuliya-refactoring\practice\Refactoring\ConsoleApp\bin\Debug\ConsoleApp.pdb
+D:\My Projects\yuliya-refactoring\practice\Refactoring\ConsoleApp\obj\Debug\ConsoleApp.csprojAssemblyReference.cache
+D:\My Projects\yuliya-refactoring\practice\Refactoring\ConsoleApp\obj\Debug\ConsoleApp.csproj.CoreCompileInputs.cache
+D:\My Projects\yuliya-refactoring\practice\Refactoring\ConsoleApp\obj\Debug\ConsoleApp.exe
+D:\My Projects\yuliya-refactoring\practice\Refactoring\ConsoleApp\obj\Debug\ConsoleApp.pdb

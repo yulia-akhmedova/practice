@@ -7,6 +7,7 @@ namespace ConsoleApp.Models
         public string Name { get; private set; }
         public int Value { get; private set; }
 
+        //if you avoid harcoded name - you will beed to pass Enum value here
         public Characteristic(string name)
         {
             Name = name;
