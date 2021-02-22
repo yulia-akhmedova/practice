@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp.Helpers
+﻿namespace CharacterCreatorMenu.Helpers
 {
     public static class Messages
     {
@@ -12,8 +12,18 @@
 
         public static string GetPointsRequest(string operand)
         {
-            //what if * will be passed as operand?
-            var operandValue = operand == "+" ? "прибавить" : "отнять";
+            var operandValue = string.Empty;
+
+            if (operand == "+")
+            {
+                operandValue = "прибавить";
+            }
+
+            if (operand == "-")
+            {
+                operandValue = "отнять";
+            }
+
             return string.Format(POINTS_REQUEST, operandValue);
         }
     }
