@@ -9,10 +9,13 @@ namespace CharacterCreatorMenu.Helpers
     {
         public static void PrintIntro(int points)
         {
-            Console.WriteLine(string.Format(Messages.INTRO_MESSAGE, points));
+            //Console.WriteLine with 2 arguments will work same as string.Format
+            Console.WriteLine(Messages.INTRO_MESSAGE, points);
             Console.ReadKey();
         }
 
+        //why this returns string? it can return Enum value directly
+        //will be easier to manage enum value
         public static string GetStringInput<T>(string message)
             where T : struct, IConvertible
         {
