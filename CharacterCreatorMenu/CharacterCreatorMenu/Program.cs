@@ -11,7 +11,7 @@ namespace CharacterCreatorMenu
             var player = new Player();
             var characteristic = string.Empty;
             var operand = string.Empty;
-            var operation = 0;
+            var operation = 0; //this is not quite operation, but points to add or subtract
 
             InputHelper.PrintIntro(player.Points);
 
