@@ -42,18 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attributes\MethodToInvoke.cs" />
     <Compile Include="Enums\CharacteristicType.cs" />
     <Compile Include="Enums\OperationType.cs" />
-    <Compile Include="Helpers\ClassHelper.cs" />
-    <Compile Include="Helpers\EnumHelper.cs" />
+    <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Helpers\InputHelper.cs" />
     <Compile Include="Helpers\Messages.cs" />
-    <Compile Include="Models\Add.cs" />
+    <Compile Include="Models\Operations.cs" />
+    <Compile Include="Models\Operation\Add.cs" />
     <Compile Include="Models\Characteristic.cs" />
-    <Compile Include="Models\Operation.cs" />
+    <Compile Include="Models\Operation\BaseOperation.cs" />
     <Compile Include="Models\Player.cs" />
-    <Compile Include="Models\Subtract.cs" />
+    <Compile Include="Models\Operation\Subtract.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

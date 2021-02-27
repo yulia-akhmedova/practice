@@ -1,6 +1,5 @@
 ﻿using CharacterCreatorMenu.Enums;
-using EnumDescription;
-using System;
+using CharacterCreatorMenu.Extensions;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -45,15 +44,15 @@ namespace CharacterCreatorMenu.Models
             }
         }
 
-        public void CalculateCharacteristicValue(string name, int points, string operand)
+        public void CalculateCharacteristicValue(CharacteristicType name, OperationType operatorSign, int operandPoints)
         {
-            var characteristic = Characteristics.FirstOrDefault(x => x.Name.ToLower() == name);
+            var characteristic = Characteristics.FirstOrDefault(x => x.Name.ToLower() == name.GetDescription().ToLower());
 
             if (characteristic != null)
             {
-                var operationTypes = (OperationType[])Enum.GetValues(typeof(OperationType));
-                var operationType = operationTypes.First(x => EnumHelper.GetDescription(x) == operand);
-                var pointsToApply = SetPoints(points);
+                var operationTypes = EnumExtensions.GetEnumArray<OperationType>();
+                var operationType = operationTypes.First(x => x == operatorSign);
+                var pointsToApply = SetPoints(operandPoints);
 
                 Points -= characteristic.ChangeValue(operationType, pointsToApply);
 

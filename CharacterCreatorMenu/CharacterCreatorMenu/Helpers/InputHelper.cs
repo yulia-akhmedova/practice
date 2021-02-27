@@ -1,5 +1,5 @@
-﻿using CharacterCreatorMenu.Models;
-using EnumDescription;
+﻿using CharacterCreatorMenu.Extensions;
+using CharacterCreatorMenu.Models;
 using System;
 using System.Linq;
 
@@ -9,27 +9,28 @@ namespace CharacterCreatorMenu.Helpers
     {
         public static void PrintIntro(int points)
         {
-            //Console.WriteLine with 2 arguments will work same as string.Format
             Console.WriteLine(Messages.INTRO_MESSAGE, points);
             Console.ReadKey();
         }
 
-        //why this returns string? it can return Enum value directly
-        //will be easier to manage enum value
-        public static string GetStringInput<T>(string message)
-            where T : struct, IConvertible
+        public static T GetEnumTypeInput<T>(string message)
+            where T : struct
         {
             var isValid = false;
-            var values = (T[])Enum.GetValues(typeof(T));
-            var value = string.Empty;
+            var input = string.Empty;
+            var values = EnumExtensions.GetEnumArray<T>();
+            T value;
 
-            while (isValid == false)
+            do
             {
                 Console.Write(message);
-                value = Console.ReadLine().ToLower();
+                input = Console.ReadLine().ToLower();
 
-                isValid = values.Any(x => EnumHelper.GetDescription(x).ToLower() == value);
+                isValid = values.Any(x => EnumExtensions.GetDescription(x).ToLower() == input);
             }
+            while (isValid == false);
+
+            EnumExtensions.GetEnumFromDescription(input, out value);
             return value;
         }
 
@@ -39,13 +40,14 @@ namespace CharacterCreatorMenu.Helpers
             var intInput = 0;
             var stringInput = string.Empty;
 
-            while (isInputParsed == false)
+            do
             {
                 Console.Write(message);
                 stringInput = Console.ReadLine().ToLower();
 
                 isInputParsed = int.TryParse(stringInput, out intInput);
             }
+            while (isInputParsed == false);
 
             return intInput;
         }

@@ -1,4 +1,6 @@
-﻿namespace CharacterCreatorMenu.Helpers
+﻿using CharacterCreatorMenu.Enums;
+
+namespace CharacterCreatorMenu.Extensions
 {
     public static class Messages
     {
@@ -10,17 +12,16 @@
         public const string POINTS_REQUEST = "Количество поинтов которые следует {0}: ";
         public const string AGE_REQUEST = "Вы распределили все очки. Введите возраст персонажа: ";
 
-        //why string? you can get Enum value directly
-        public static string GetPointsRequest(string operand)
+        public static string GetPointsRequest(OperationType operand)
         {
             var operandValue = string.Empty;
 
-            if (operand == "+")
+            if (operand == OperationType.Add)
             {
                 operandValue = "прибавить";
             }
 
-            if (operand == "-")
+            if (operand == OperationType.Subtract)
             {
                 operandValue = "отнять";
             }

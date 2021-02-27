@@ -1,4 +1,5 @@
 using CharacterCreatorMenu.Enums;
+using CharacterCreatorMenu.Extensions;
 using CharacterCreatorMenu.Helpers;
 using CharacterCreatorMenu.Models;
 
@@ -8,10 +9,9 @@ namespace CharacterCreatorMenu
     {
         static void Main()
         {
-            var player = new Player();
-            var characteristic = string.Empty;
-            var operand = string.Empty;
-            var operation = 0; //this is not quite operation, but points to add or subtract
+            Player player = new Player();
+            CharacteristicType characteristic;
+            OperationType operatorSign;
 
             InputHelper.PrintIntro(player.Points);
 
@@ -19,11 +19,12 @@ namespace CharacterCreatorMenu
             {
                 InputHelper.PrintPlayerData(player);
 
-                characteristic = InputHelper.GetStringInput<CharacteristicType>(Messages.CHARACTERISTIC_REQUEST);
-                operand = InputHelper.GetStringInput<OperationType>(Messages.OPERAND_REQUEST);
-                operation = InputHelper.GetIntInput(Messages.GetPointsRequest(operand));
+                characteristic = InputHelper.GetEnumTypeInput<CharacteristicType>(Messages.CHARACTERISTIC_REQUEST);
+                operatorSign = InputHelper.GetEnumTypeInput<OperationType>(Messages.OPERAND_REQUEST);
 
-                player.CalculateCharacteristicValue(characteristic, operation, operand);
+                var operandPoints = InputHelper.GetIntInput(Messages.GetPointsRequest(operatorSign));
+
+                player.CalculateCharacteristicValue(characteristic, operatorSign, operandPoints);
             }
 
             player.SetAge(InputHelper.GetIntInput(Messages.AGE_REQUEST));

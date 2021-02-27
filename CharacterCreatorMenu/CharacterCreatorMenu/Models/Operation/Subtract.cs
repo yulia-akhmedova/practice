@@ -1,10 +1,7 @@
-﻿using CharacterCreatorMenu.Attributes;
-
-namespace CharacterCreatorMenu.Models
+﻿namespace CharacterCreatorMenu.Models.Operation
 {
-    public class Subtract : Operation
+    public class Subtract : BaseOperation
     {
-        [MethodToInvoke]
         public override int Calculate(int oldValue, int points)
         {
             var newValue = oldValue - points;

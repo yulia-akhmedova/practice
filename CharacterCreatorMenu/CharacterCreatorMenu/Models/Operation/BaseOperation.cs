@@ -1,6 +1,6 @@
-﻿namespace CharacterCreatorMenu.Models
+﻿namespace CharacterCreatorMenu.Models.Operation
 {
-    public abstract class Operation
+    public abstract class BaseOperation
     {
         public abstract int Calculate(int oldValue, int points);
 
